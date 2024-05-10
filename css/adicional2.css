@@ -1,0 +1,199 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: aqua;
+
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+.navbar{
+    background-color: #ff0080;
+}
+
+header .container{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.promocion, .fotoindex{
+    position: relative;
+    margin-top: 125px;
+}
+.inf_propia {
+    margin-top: 400px;
+    background-color: white;
+}
+
+h3{
+    font-size: 52px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.img_propia{
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+}
+
+.texto{
+    margin-right: 100px;
+}
+
+.tit_somos{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+}
+
+.garantias{
+    height: 400px;
+    margin-bottom: 100px;
+    background-color: white;
+
+}
+
+.caracteristicas, ul{
+    margin-top: 50px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+text{
+    position: relative;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*   min-height: 20vh; */
+    transition: 0.5s;
+    background-color: #000000;
+    margin-top: 100px;
+    flex-shrink: 0;
+}
+  
+.rodape .redes {
+    position: relative;
+    display: flex;
+}
+  
+.rodape .redes li {
+    list-style: none;
+}
+  
+.rodape .redes li::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 120px));
+    font-size: 14vw;
+    pointer-events: none;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.5s;
+    opacity: 0;
+}
+  
+.rodape .redes li:hover::before {
+    opacity: 0.1;
+    transform: translate(-50%, calc(-50% + 150px));
+}
+  
+.rodape .redes li a {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 4em;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    transition: background 0.25s;
+}
+  
+.js-tilt-glare {
+    border-radius: 10px;
+}
+  
+.rodape .redes li a:hover.facebook {
+    background: #1877f2;
+}
+  
+.rodape .redes li a:hover.instagram {
+    background: #e4405f;
+}
+  
+.rodape .redes li a:hover.twitter {
+    background: #0099ff;
+}
+  
+.rodape .redes li a:hover.youtube {
+    background: #ff0000;
+}
+  
+.rodape .redes li a:hover.linkedin {
+    background: #0e76a8;
+}
+  
+.rodape .redes li a:hover.githube {
+    background: #171515;
+}
+  
+.rodape .redes li a:hover.codepen {
+    background: #1877f2;
+}
+  
+.rodape .redes li a .fa {
+    transition: 0.25s;
+    pointer-events: none;
+}
+  
+.rodape .redes li a:hover .fa {
+    color: #fff;
+    transform: scale(1.75) translatez(50px);
+}
