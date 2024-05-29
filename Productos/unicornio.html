@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <title>Regalos y Manualidades Anabel</title>
+            <link rel="stylesheet" href="../css/bootstrap.min.css">
+            <link rel="stylesheet" href="../adicional2.css">
+            <link rel="stylesheet" href="../css/adicional.css">
+            <style>
+                .row{
+                    background-color: salmon;
+                    margin-top: 20px;
+                }
+                .contenedor{
+                    background: beige;
+                    text-align: center;
+                    padding: 20px;
+                    border: 1px solid blueviolet;
+                    text-align: left;
+                }
+                .contenido{
+                    margin-top: 200px;
+                }
+                footer{
+                    margin-top: 100px;
+                }
+            </style>
+    </head>
+    <body>
+        <header>
+            <div class="container contenido">
+                <nav class="navbar navbar-expand-lg fixed-top">
+                    <div class="container-fluid">
+                        <a href="../index.html" class="navbar-brand"><img src="../img/logo.png" alt="" height="100px"></a>
+                        <nav>
+                            <a href="../index.html">Inicio</a>
+                            <a href="../contacto.html">Contactanos</a>
+                            <a href="../redes.html">Redes Sociales</a>
+                            <a href="../login.php">Iniciar Sesion / Registrarse</a>
+                            <a href="../subcribirse.html">Subcribirse</a>
+                            <a href="../ayuda.html">Ayuda</a>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="contenedor col-md-6 col-12 main">
+                    <img src="../img/unicornio.jpg" alt="" height="400px" width="600px">
+                </div>
+
+                <div class="contenedor col-md-6 col-12 aside">
+                    <div class="mb-3">
+                        <h1>Unicornio</h1>
+                        <h5 class="card-subtitle text-muted mb-2">
+                            <p>Unicornio mide 60cm de altura y 40cm de ancho</p>
+                        </h5>
+                        <h4>20€</h4>
+                    </div>
+                    
+                    <form action="">
+                        <div class="mb-3 mt-5">
+                            <h1><label for="mensaje" class="form-label">
+                                Modificaciones
+                            </label></h1>
+                            <textarea class="form-control" name="mensaje" id="Mensaje"></textarea>
+                            <div id="ayuda-correo" class="form-text">
+                                Si lo quieres del mismo color y mismo tamaño INTRODUZCA: Lo quiero igual
+                            </div>
+                            <div id="ayuda-correo" class="form-text">
+                                Si lo quieres de otra manera INTRODUZCA: Los colores, el tamaño, etc...
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-5">Enviar Formulario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <footer class="text-light text-center p-3" class="contenedor">
+            <p>&copy; Regalos y Manualidades Anabel</p>
+        </footer>
+
+    </body>
+</html>
