@@ -38,8 +38,8 @@ CREATE TABLE `chatbot` (
 --
 
 INSERT INTO `chatbot` (`id`, `queries`, `replies`) VALUES
-(1, 'muebles decoración', 'Aqui tienes los mejores muebles <a href=\"https://www.atrapamuebles.com/?gad_source=1&gclid=CjwKCAiA6KWvBhAREiwAFPZM7qPgpAgT8_rykt63gUWhclfJ3yQma3rRZ444Wv7WX6WfLEX28IzqkxoCIrsQAvD_BwE\">AQUI TIENES</a>'),
-(2, 'muebles verdes muebles rojos muebles azules muebles morado muebles marrón muebles cian muebles amarillos muebles grises muebles negros', 'Esto es lo que tenemos sobre ese resultado \r\n<a href=\"https:CjwKCAiA6KWvBhAREiwAFPZM7qPgpAgT8_rykt63gUWhclfJ3yQma3rRZ444Wv7WX6WfLEX28IzqkxoCIrsQAvD_BwE\">Pulsa Aqui</a>');
+(1, 'Disney', 'Aqui tienes todo lo relacionado con Disney <a href="productos.html/disney">AQUI TIENES</a>'),
+(2, 'Marvel', 'Esto es lo que tenemos sobre ese resultado \r\n<a href="productos.html/Marvel">Pulsa Aqui</a>');
 
 --
 -- Índices para tablas volcadas

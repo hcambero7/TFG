@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Regalos y Manualidades Anabel</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="adicional2.css">
+        <link rel="stylesheet" href="adicional.css">
+        <style>
+            /* Estilos personalizados */
+            body {
+                padding-top: 56px;
+                background-color: #00f7ff;
+                margin-left: -15px;
+                padding-bottom: 100px; /* Espacio suficiente para el carrito sin superponerse con el pie de página */
+                position: relative; /* Asegura que el carrito fijo sea relativo a la ventana de visualización */
+            }
+        
+            /* Ajusta el padding del cuerpo para la barra de navegación fija */
+            @media (min-width: 992px) {
+                body {
+                    padding-top: 0;
+                }
+            }
+        
+            .contenedor {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+        
+            .producto {
+                padding: 10px;
+                margin-bottom: 5px;
+            }
+        
+            .carrito {
+                min-height: 100px;
+                height: 200px; /* Altura del carrito */
+                border-radius: 6px;
+                border: 2px dashed ;
+                padding: 10px;
+                margin-top: 10px;
+                overflow-y: auto; /* Agregamos scroll vertical cuando es necesario */
+                position: fixed; /* Fija el carrito en la parte inferior de la pantalla */
+                bottom: 0; /* Asegura que el carrito esté alineado en la parte inferior */
+                width: 96%; /* Ocupa todo el ancho disponible */
+                background-color: rgb(2, 255, 32); /* Fondo blanco para una mejor visibilidad */
+                z-index: 1000; /* Asegura que el carrito esté por encima del contenido */
+            }
+        
+            .producto img {
+                width: 100%;
+            }
+        </style>
+        
+        
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg fixed-top">
+                    <div class="container-fluid">
+                        <a href="index.html" class="navbar-brand"><img src="img/logo.png" alt="" height="100px"></a>
+                        <nav>
+                            <a href="index.html">Inicio</a>
+                            <a href="contacto.html">Contactanos</a>
+                            <a href="redes.html">Redes Sociales</a>
+                            <a href="login.php">Iniciar Sesion / Registrarse</a>
+                            <a href="subcribirse.html">Suscribete</a>
+                            <a href="ayuda.html">Ayuda</a>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="container">
+            <div class="row mt-4">
+                <div class="row mt-3">
+                    <div class="col-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/palitomiprimeracomunion.jpg" alt="" height="400px">
+                            <div class="card-body">
+                                <h5 class="card-title">TITULO</h5>
+                                <h6 class="card-subtitle text-muted mb-2">Subtitulo</h6>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, harum optio!</p>
+                                <a href="Productos/palitocomunion.html" class="btn btn-outline-primary">Boton</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/micky.jpg" alt="" height="400px">
+                            <div class="card-body">
+                                <h5 class="card-title">Mickey Mouse</h5>
+                                <h6 class="card-subtitle text-muted mb-2">50€</h6>
+                                <p class="card-text">Mickey Mouse que mide 1.20cm de altura y 50cm de ancho</p>
+                                <a href="Productos/micky.html" class="btn btn-outline-primary">Boton</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/unicornio.jpg" alt="" height="400px">
+                            <div class="card-body">
+                                <h5 class="card-title">Unicornio</h5>
+                                <h6 class="card-subtitle text-muted mb-2">20€</h6>
+                                <p class="card-text">Unicornio mide 60cm de altura y 40cm de ancho</p>
+                                <a href="Productos/unicornio.html" class="btn btn-outline-primary">Boton</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pie de página -->
+        <footer class="text-light text-center p-3 fixed-bottom" class="contenedor">
+            <p>&copy; Regalos y Manualidades Anabel</p>
+        </footer>
+
+    </body>
+</html>
