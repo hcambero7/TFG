@@ -4,17 +4,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="adicional2.css">
-        <link rel="stylesheet" href="css/adicional.css">
         <link rel="stylesheet" href="chatbot.css">
         <title>Regalos y Manualidades Anabel</title>
+        <style>
+            nav{
+                position: relative;
+                margin-right: 0px;
+            }
+
+            .menu{
+                position: relative;
+                margin-top: 25px;
+                color: blue;
+            }
+            
+            .imagen{
+                position: relative;
+                margin-left: -600px;
+                margin-top: 25px;
+            }
+        </style>
     </head>
     <body>
         <div class="heeader">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg fixed-top">
-                    <div class="container-fluid">
-                        <a href="index.html" class="navbar-brand"><img src="img/logo.png" alt="" height="100px"></a>
-                        <nav><b>
+                    <div class="container mt-5">
+                        <a href="index.html" class="navbar-brand imagen"><img src="img/logo.png" alt="" height="100px" ></a>
+                        <nav class="menu" style="display: flex; justify-content: end;"><b>
                             <a href="index.html">Inicio</a>
                             <a href="contacto.html">Contacto</a>
                             <a href="redes.html">Redes Sociales</a>
@@ -42,15 +59,12 @@
                 </div>
                 <div class="typing-field">
                     <div class="input-data">
-                        <input id="data" type="text" placeholder="Escribe algo aquí.." required>
+                        <input id="data" type="text" name="data" placeholder="Escribe algo aquí.." required>
                         <button id="send-btn">Enviar</button>
                     </div>
                 </div>
             </div>  
         </center>  
-
-        <script src="ayuda.js"></script>
-        <script src="ayuda.php"></script>
 
         <footer>
             <div class="container">
@@ -58,7 +72,29 @@
             </div>
         </footer>
 
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $("#send-btn").on("click", function() {
+                    $value = $("#data").val();
+                    console.log("Valor enviado:", $value);
+                    $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>' + $value + '</p></div></div>';
+                    $(".form").append($msg);
+                    $("#data").val('');
+
+                    $.ajax({
+                        url: 'message.php',
+                        type: 'POST',
+                        data: 'data=' + $value, 
+                        success: function(result) {
+                            $replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>' + result + '</p></div></div>';
+                            $(".form").append($replay);
+                            $(".form").scrollTop($(".form")[0].scrollHeight);
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

@@ -1,72 +1,49 @@
 <?php
     require_once("config.php");
+    $errors = [];
 
-    function limpiar($valor){
-        $valor = htmlspecialchars($valor);
-        $valor = trim($valor);
-        return $valor;
-      }
-  
-      if(!empty($_POST["nombre"])){
-        $name = limpiar($_POST["nombre"]);
-      }else{
-        $error[]="<br>Debes de introducir el nombre <br>";
-      }
-  
-      if(!empty($_POST["apellidos"])){
-        $lastname = limpiar($_POST["apellidos"]);
-      }else{
-        $error[]="<br>Debes de introducir los apellidos <br>";
-      }
-      
-      if(!empty($_POST["telefono"])){
-        $phone = limpiar($_POST["telefono"]);
-      }else{
-        $error[]="<br>Debes de introducir el telefono <br>";
-      }
-  
-      if(!empty($_POST["usuario"])){
-        $username = limpiar($_POST["usuario"]);
-      }else{
-        $error[]="<br>Debes de introducir el usuario <br>";
-      }
-  
-      if(!empty($_POST["password"])){
-        $password = limpiar($_POST["password"]);
-      }else{
-        $error[]="Debes de introducir la contraseña <br>";
-      }
+    if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['telefono']) && !empty($_POST['usuario']) && !empty($_POST['contrasena'])){
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $telefono = $_POST['telefono'];
+        $usuario = $_POST['usuario'];
+        $contrasena = $_POST['contrasena'];
 
-      $mail=null;
-  
-      if(!empty($error)){
-        echo "<p style='color:red';>";
-        foreach($error as $valor){
-          echo $valor;
+        $nombre = trim(htmlspecialchars($nombre));
+        $apellido = trim(htmlspecialchars($apellido));
+        $telefono = trim(htmlspecialchars($telefono));
+        $usuario = trim(htmlspecialchars($usuario));
+        $contrasena = trim(htmlspecialchars($contrasena));
+    }else {
+        $errors[] = "Los campos no pueden estar vacios.";
+    }
+
+    if(!isset($errors)){
+        echo "<p stye='color:red;'>";
+        foreach($errors as $e){
+            echo $e . "<br>";
         }
-        echo "</p>";
-      }else{
-          $password=md5($contra);
-          $this->db = new PDO(dsn,BBDD_USER,BBDD_PASSWORD);
-              if(mysqli_connect_errno()){
-                  printf("Conexion fallida");
-                  exit();
-              }else{
-                $conexion= $this->db = new PDO(dsn,BBDD_USER,BBDD_PASSWORD);
-                if($conexion->connect_errno){
-                    echo "Conexion fallida";
-                    exit;
-                } else {
-                    $preparada = $conexion->prepare("INSERT INTO tienda values $name, $lastname, $phone, $mail, $username, $password");
-                    $preparada->execute();
-                    if($conexion->affected_rows > 0){
-                        echo "insertado";
-                    } else {
-                        echo "No se ha insertado ningún registro";
-                    }
-                }
-              }
-          $conexion -> close();
-      }
+    }else{
 
+        try{
+            $conex = new PDO(DSN,BBDD_USER,BBDD_PASSWORD);
+            $conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+            $password=md5($contrasena);
+
+            $sql = "INSERT INTO usuarios (name, lastname, phone, username, password) VALUES (:nombre,:apellido,:telefono,:usuario,:contrasena)";
+            $stmt = $conex->prepare($sql);
+            $stmt->bindParam(':nombre', $nombre);
+            $stmt->bindParam(':apellido', $apellido);
+            $stmt->bindParam(':telefono', $telefono);
+            $stmt->bindParam(':usuario', $usuario);
+            $stmt->bindParam(':contrasena', $password);
+            $stmt->execute();
+
+            header('Location: login.php');
+
+        }catch(PDOException $e){
+            echo "Error " . $e->getMessage();
+        }
+    }
+?>

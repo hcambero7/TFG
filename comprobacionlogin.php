@@ -1,42 +1,40 @@
 <?php
     require_once("config.php");
-
-    function limpiar($valor){
-        $valor = htmlspecialchars($valor);
-        $valor = trim($valor);
-        return $valor;
-      }
-  
-    if(!empty($_POST["usuario"])){
-      $username = limpiar($_POST["usuario"]);
-    }else{
-      $error[]="<br>Debes de introducir el usuario <br>";
-    }
-
-    if(!empty($_POST["password"])){
-      $password = limpiar($_POST["password"]);
-    }else{
-      $error[]="Debes de introducir la contraseña <br>";
-    }
-
-    if(!empty($error)){
-      echo "<p style='color:red';>";
-      foreach($error as $valor){
-        echo $valor;
-      }
-      echo "</p>";
-    }else{
-        $password=md5($contra);
-        $conexion = $this->db = new PDO(dsn,BBDD_USER,BBDD_PASSWORD);
-            if(mysqli_connect_errno()){
-                printf("Conexion fallida");
-                exit();
-            }else{
-              $preparada = $this->db->prepare("SELECT username FROM teinda where username =:usuario and password=: password");
-              $preparada->bindParam(':usuario',$username);
-              $preparada->bindParam(':password',$password);
-              $preparada->execute();
-              $row=$preparada->fetch();
+        $errors = [];
+    
+        if(!empty($_POST['username']) && !empty($_POST['contrasena'])){
+            $usuario = $_POST['username'];
+            $contrasena = $_POST['contrasena'];
+    
+            $usuario = trim(htmlspecialchars($usuario));
+            $contrasena = trim(htmlspecialchars($contrasena));
+        }else {
+            $errors[] = "Nombre o email no pueden estar vacios.";
+        }
+    
+        if(!isset($errors)){
+            echo "<p stye='color:red;'>";
+            foreach($errors as $e){
+                echo $e . "<br>";
             }
-        $conexion -> close();
-    }
+        }else{
+    
+            try{
+                $conex = new PDO(DSN,BBDD_USER,BBDD_PASSWORD);
+                $conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $password=md5($contrasena);
+    
+                $sql = "SELECT name FROM usuarios WHERE username = :usuario AND password = :contrasena";
+                $stmt = $conex->prepare($sql);
+                $stmt->bindParam(':usuario', $nombre);
+                $stmt->bindParam(':contrasena', $password);
+                $stmt->execute();
+    
+                header('Location: productos.html');
+    
+            }catch(PDOException $e){
+                echo "Error " . $e->getMessage();
+            }
+        }
+?>

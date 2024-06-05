@@ -2,16 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/adicional.css"/>
         <link rel="stylesheet" href="adicional2.css">
+        <link rel="stylesheet" href="productos.css">
+        <link rel="stylesheet" href="mediaquery.css">
         <title>Regalos y Manualidades Anabel</title>
         <style>
             body {
                 background-image: url("img/fondo.jpg");
-                background-size: cover; /* Escala la imagen para cubrir todo el fondo */
-                background-repeat: no-repeat; /* Evita que la imagen se repita */
-                background-position: center; /* Centra la imagen en el fondo */
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
             }
             footer{
                margin-top: 122.9px;
@@ -23,7 +26,7 @@
             }
             .text{
                 position: relative;
-                margin-left: 300px;
+                margin-left: 330px;
             }
         </style>
     </head>
@@ -33,14 +36,31 @@
                 <nav class="navbar navbar-expand-lg fixed-top">
                     <div class="container-fluid">
                         <a href="index.html" class="navbar-brand"><img src="img/logo.png" alt="" height="100px"></a>
-                        <nav>
-                            <a href="index.html">Inicio</a>
-                            <a href="contacto.html">Contactanos</a>
-                            <a href="redes.html">Redes Sociales</a>
-                            <a href="productos.html">Productos</a>
-                            <a href="login.php">Iniciar Sesion / Registrarse</a>
-                            <a href="ayuda.html">Ayuda</a>
-                        </nav>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>                        
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contacto.html">Contactanos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="redes.html">Redes Sociales</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="productos.html">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login.php">Iniciar Sesion / Registrarse</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="ayuda.html">Ayuda</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -49,19 +69,18 @@
         <div class="container-fluid subcribirse">
             <h1 class="text-center">Regalos y Manualidades Anabel</h1>
             <h3 class="text-center subcribete mt-3">Susbribete</h3>
-            <form action="" method="post">
-                <pre class="text mt-5">
-                    Aquí introduciendo tu nombre y tu correo te llegaran correos con promociones 
-                            exclusivas para tí en función de tu cantidad de tus pedidos
-                </pre>
+            <pre class="text mt-5">
+                Aquí introduciendo tu nombre y tu correo te llegaran correos con promociones 
+                exclusivas para tí en función de tu cantidad de tus pedidos
+            </pre>
+            <form action="suscribeteinsertbbdd.php" method="post">
                 <center>
                     <input type="text" name="nombre" placeholder="Nombre" required>
                     <input type="email" name="email" placeholder="Email" required>
-                    <input type="button" value="Enviar" onclick="">
+                    <input type="submit" value="Enviar">
                 </center>
             </form>
         </div>
-    </main>
         <footer>
             <div class="container">
                 <p>&copy; Regalos y Manualidades Anabel</p>
@@ -69,5 +88,6 @@
         </footer>
 
         <script src="js/bootstrap.min.js"></script>
+
     </body>
 </html>

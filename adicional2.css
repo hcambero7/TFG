@@ -42,28 +42,6 @@ header a{
     color: black;
 }
 
-
-.heeader .container{
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-}
-
-.heeader nav{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    padding-bottom: 25px;
-}
-
-.heeader a{
-    padding: 5px 12px;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-}
-
-
 .promocion, .fotoindex{
     position: relative;
     margin-top: 125px;
@@ -123,7 +101,6 @@ text{
     display: flex;
     justify-content: center;
     align-items: center;
-    /*   min-height: 20vh; */
     transition: 0.5s;
     background-color: #000000;
     margin-top: 100px;

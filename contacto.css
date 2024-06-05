@@ -1,0 +1,67 @@
+body {
+    padding-top: 56px;
+    background-color: #00f7ff;
+    margin-left: -15px;
+    
+    position: relative;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 200px;
+}
+
+.producto {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.carrito {
+    min-height: 100px;
+    height: 200px; 
+    border-radius: 6px;
+    border: 2px dashed ;
+    padding: 10px;
+    margin-top: 100px;
+    overflow-y: auto; 
+    position: fixed; 
+    bottom: 0; 
+    width: 96%; 
+    background-color: rgb(2, 255, 32); 
+    z-index: 1000; 
+}
+
+.producto img {
+    width: 100%;
+}
+
+.container{
+    margin-bottom: 50px;
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-collapse {
+        background-color: pink; 
+        border-radius: 10px; 
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    }
+    .navbar-toggler {
+        border-color: transparent; 
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(8, 8, 8, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .navbar-nav {
+        flex-direction: column;
+    }
+    .nav-item {
+        margin-right: 0; 
+    }
+    .navbar-nav .nav-link {
+        padding: 10px 20px; 
+        border-bottom: 1px solid #dee2e6; 
+    }
+}
+
